@@ -9,14 +9,14 @@
     <script src="Scripts/script.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="inputForm" runat="server">
         <div>
             <%-- Input --%>
             <asp:Label ID="TotalSumLabel" runat="server" Text="Total köpesumma:"></asp:Label>
             <asp:TextBox ID="TotalSumTextbox" runat="server"></asp:TextBox>
             <asp:Label ID="Crowns" runat="server" Text="Kr"></asp:Label>
             
-            <%-- Validering --%>
+            <%-- Validation --%>
             <div>
                 <asp:RequiredFieldValidator ID="TotalSumRequired" runat="server" 
                     ErrorMessage="Fältet är obligatoriskt!" 
@@ -36,9 +36,37 @@
             </div>
         </div>
         <div>
-            <%-- Submitknapp --%>
-            <asp:Button ID="CalculateReceiptButton" runat="server" Text="Button" />
+            <%-- Submit button --%>
+            <asp:Button ID="CalculateReceiptButton" runat="server" Text="Beräkna" OnClick="CalculateReceiptButton_Click" />
         </div>
+        <%-- Receipt --%>
+        <asp:Panel ID="ReceiptPanel" runat="server" Visible="false">
+            <div class="receiptHeader">
+                <asp:Label ID="ReceiptHeaderLabel" runat="server" Text="Kvitto"></asp:Label>
+            </div>
+            <div class="receiptSummary">
+                <div>
+                    <asp:Label ID="TotalAmountLabel" CssClass="summaryLeft" runat="server" Text="Totalt:"></asp:Label>
+                    <asp:Label ID="TotalAmount" CssClass="summaryRight" runat="server" Text=""></asp:Label>
+                </div>
+                <div>
+                    <asp:Label ID="DiscountPercentageLabel" CssClass="summaryLeft" runat="server" Text="Rabattsats:"></asp:Label>
+                    <asp:Label ID="DiscountPercentage" CssClass="summaryRight" runat="server" Text=""></asp:Label>
+                </div>
+                <div>
+                    <asp:Label ID="DiscountAmountLabel" CssClass="summaryLeft" runat="server" Text="Rabatt:"></asp:Label>
+                    <asp:Label ID="DiscountAmount" CssClass="summaryRight" runat="server" Text=""></asp:Label>
+                </div>
+                <div>
+                    <asp:Label ID="ToPayLabel" CssClass="summaryLeft" runat="server" Text="Att betala:"></asp:Label>
+                    <asp:Label ID="ToPayAmount" CssClass="summaryRight" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
+            <div class="receiptBottom">
+                <asp:Label ID="WelcomeBackLabel" runat="server" Text="Välkommen åter!"></asp:Label>
+            </div>
+        </asp:Panel>
     </form>
+
 </body>
 </html>

@@ -1,4 +1,57 @@
 ﻿.error {
-    color:red;
+    color: red;
+    font-weight: bold;
+}
+
+#ReceiptPanel {
+    background-color: lightgrey;
+    margin: 10px;
+    width: 200px;
+    border:solid 2px;
+}
+.receiptHeader {
+    font-weight: bold;
+    width: 50%;
+    margin: 0 auto;
+    height: 50px;
+}
+
+#ReceiptHeaderLabel {
+    text-decoration:underline;
+    width:50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+}
+
+.receiptSummary {
+    padding: 10px;
+    border-top: dashed;
+    border-bottom: dashed;
+    border-width: 1px;
+    height:80px;
+}
+
+.receiptBottom {
+    font-weight: bold;
+    width: 60%;
+    margin: 0 auto;
+    height: 50px;
+}
+
+#WelcomeBackLabel {
+    margin-top: 20px;
+    display: block;
+}
+
+.summaryLeft {
+    float:left;
+    width:50%;
     font-weight:bold;
+}
+
+.summaryRight {
+    float:right;
+    width:50%;
+    text-align:right;
 }
