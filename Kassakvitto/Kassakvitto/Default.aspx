@@ -32,7 +32,7 @@
                     ErrorMessage="Talet måste vara större än 0!" 
                     ControlToValidate="TotalSumTextbox" 
                     Operator="GreaterThan" 
-                    ValueToCompare="0" CssClass="error"></asp:CompareValidator>
+                    ValueToCompare="0" CssClass="error" Type="Double"></asp:CompareValidator>
             </div>
         </div>
         <div>
